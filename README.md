@@ -1,5 +1,5 @@
 # Segment Anything 3D
-We extend [Segment Anything](https://github.com/facebookresearch/segment-anything) to 3D perception by transferring the segmentation information of 2D images to 3D space. We found that the group information is meaningful for 3D perception. This project is still in progress. We are very much welcome any issue or pull request.
+We extend [Segment Anything](https://github.com/facebookresearch/segment-anything) to 3D perception by transferring the segmentation information of 2D images to 3D space. We expect that the segment information can be helpful to 3D traditional perception and the open world perception. This project is still in progress, and it will be embedded into our perception codebase [Pointcept](https://github.com/Pointcept/Pointcept). We very much welcome any issue or pull request.
 
 ## Result
 Example mesh is in [example_mesh](./example_mesh/).
