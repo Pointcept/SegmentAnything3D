@@ -72,9 +72,16 @@ Merge the entire pointcloud by region merging method.
 We apply Felzenswalb and Huttenlocher's Graph Based Image Segmentation algorithm to the scenes using the default parameters. Please refer to the [original repository](https://github.com/ScanNet/ScanNet/tree/master/Segmentator) for details. Then merge the 2 segmentation results to get the final result (merging code is in sam3d.py/pcd_ensemble).
 <div align=center><img src="./docs/4.png" alt="Image" width="70%"></div>
 
-## TODO List
-- [ ] 3D Interactive Segmentation
-- [ ] 3D Openworld Segmentation
+## Citation
+If you find _SAM-3D_ useful to your research, please cite our work:
+```
+@misc{pointcept2023,
+    title={Pointcept: A Codebase for Point Cloud Perception Research},
+    author={Pointcept Contributors},
+    howpublished = {\url{https://github.com/Pointcept/Pointcept}},
+    year={2023}
+}
+```
 
 ## Acknowledgements
 SAM-3D is inspirited by the following repos: [Segment Anything](https://github.com/facebookresearch/segment-anything), [Pointcept](https://github.com/Pointcept/Pointcept), [BPNet](https://github.com/wbhu/BPNet), [ContrastiveSceneContexts](https://github.com/facebookresearch/ContrastiveSceneContexts).
