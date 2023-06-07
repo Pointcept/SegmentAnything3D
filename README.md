@@ -77,7 +77,7 @@ We apply Felzenswalb and Huttenlocher's Graph Based Image Segmentation algorithm
 <div align=center><img src="./docs/4.png" alt="Image" width="70%"></div>
 
 ## Citation
-If you find _SAM-3D_ useful to your research, please cite our work:
+If you find _SAM3D_ useful to your research, please cite our work:
 ```
 @misc{yang2023sam3d,
       title={SAM3D: Segment Anything in 3D Scenes}, 
@@ -90,4 +90,4 @@ If you find _SAM-3D_ useful to your research, please cite our work:
 ```
 
 ## Acknowledgements
-SAM-3D is inspirited by the following repos: [Segment Anything](https://github.com/facebookresearch/segment-anything), [Pointcept](https://github.com/Pointcept/Pointcept), [BPNet](https://github.com/wbhu/BPNet), [ContrastiveSceneContexts](https://github.com/facebookresearch/ContrastiveSceneContexts).
+SAM3D is inspirited by the following repos: [Segment Anything](https://github.com/facebookresearch/segment-anything), [Pointcept](https://github.com/Pointcept/Pointcept), [BPNet](https://github.com/wbhu/BPNet), [ContrastiveSceneContexts](https://github.com/facebookresearch/ContrastiveSceneContexts).
