@@ -1,4 +1,8 @@
 # Segment Anything 3D
+- Authors: Yunhan Yang, [Xiaoyang Wu](https://xywu.me/), [Tong He](https://tonghe90.github.io/), [Hengshuang Zhao](https://hszhao.github.io/), [Xihui Liu](https://xh-liu.github.io/)
+- Institutes: Shanghai Artificial Intelligence Lab, The University of Hong Kong
+- Technical Report: [\[arxiv\]](https://arxiv.org/abs/2306.03908)
+
 We extend [Segment Anything](https://github.com/facebookresearch/segment-anything) to 3D perception by transferring the segmentation information of 2D images to 3D space. We expect that the segment information can be helpful to 3D traditional perception and the open world perception. This project is still in progress, and it will be embedded into our perception codebase [Pointcept](https://github.com/Pointcept/Pointcept). We very much welcome any issue or pull request.
 
 ## Result
@@ -75,11 +79,13 @@ We apply Felzenswalb and Huttenlocher's Graph Based Image Segmentation algorithm
 ## Citation
 If you find _SAM-3D_ useful to your research, please cite our work:
 ```
-@misc{pointcept2023,
-    title={Pointcept: A Codebase for Point Cloud Perception Research},
-    author={Pointcept Contributors},
-    howpublished = {\url{https://github.com/Pointcept/Pointcept}},
-    year={2023}
+@misc{yang2023sam3d,
+      title={SAM3D: Segment Anything in 3D Scenes}, 
+      author={Yunhan Yang, Xiaoyang Wu, Tong He, Hengshuang Zhao and Xihui Liu},
+      year={2023},
+      eprint={2306.03908},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
