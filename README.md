@@ -57,7 +57,7 @@ python sam3d.py --rgb_path $RGB_PATH --data_path $DATA_PATH --save_path $SAVE_PA
 ```
 
 ## Pipeline
-Our SegmentAnything3D pipeline looks as follows:
+Our SAM3D pipeline looks as follows:
 
 1. **SAM Generate Masks**\
 Use SAM to get the segmentation masks on 2D frames and then map them into the 3D space via depth information.
