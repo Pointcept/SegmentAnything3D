@@ -39,8 +39,8 @@ parser.add_argument('--label_type', default='label-filt', help='which labels (la
 parser.add_argument('--frame_skip', type=int, default=20, help='export every nth frame')
 parser.add_argument('--label_map_file', default='',
                     help='path to scannetv2-labels.combined.tsv (required for label export only)')
-parser.add_argument('--output_image_width', type=int, default=320, help='export image width')
-parser.add_argument('--output_image_height', type=int, default=240, help='export image height')
+parser.add_argument('--output_image_width', type=int, default=640, help='export image width')
+parser.add_argument('--output_image_height', type=int, default=480, help='export image height')
 
 parser.set_defaults(export_label_images=False)
 opt = parser.parse_args()
