@@ -30,7 +30,7 @@ class Voxelize(object):
 
     def __call__(self, data_dict):
         assert "coord" in data_dict.keys()
-        discrete_coord = np.floor(data_dict["coord"] / np.array(self.voxel_size)).astype(np.int)
+        discrete_coord = np.floor(data_dict["coord"] / np.array(self.voxel_size)).astype(int)
         min_coord = discrete_coord.min(0) * np.array(self.voxel_size)
         discrete_coord -= discrete_coord.min(0)
         key = self.hash(discrete_coord)
