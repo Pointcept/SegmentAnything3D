@@ -86,6 +86,9 @@ def main():
         output_pose_path = os.path.join(opt.output_path, scenes[i], 'pose')
         if not os.path.isdir(output_pose_path):
             os.makedirs(output_pose_path)
+        output_intrinsics_path = os.path.join(opt.output_path, scenes[i], 'intrinsics')
+        if not os.path.isdir(output_intrinsics_path):
+            os.makedirs(output_intrinsics_path)
         output_label_path = os.path.join(opt.output_path, scenes[i], 'label')
         if opt.export_label_images and not os.path.isdir(output_label_path):
             os.makedirs(output_label_path)
@@ -101,6 +104,7 @@ def main():
         sd.export_depth_images(output_depth_path, image_size=[opt.output_image_height, opt.output_image_width],
                                frame_skip=opt.frame_skip)
         sd.export_poses(output_pose_path, frame_skip=opt.frame_skip)
+        sd.export_intrinsics(output_intrinsics_path)
 
         if opt.export_label_images:
 
