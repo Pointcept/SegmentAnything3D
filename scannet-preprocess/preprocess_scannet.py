@@ -187,13 +187,13 @@ if __name__ == '__main__':
     config = parser.parse_args()
 
     # Load label map
-    labels_pd = pd.read_csv('pcr/datasets/preprocessing/scannet/meta_data/scannetv2-labels.combined.tsv',
+    labels_pd = pd.read_csv('scannet-preprocess/meta_data/scannetv2-labels.combined.tsv',
                             sep='\t', header=0)
 
     # Load train/val splits
-    with open('pcr/datasets/preprocessing/scannet/meta_data/scannetv2_train.txt') as train_file:
+    with open('scannet-preprocess/meta_data/scannetv2_train.txt') as train_file:
         train_scenes = train_file.read().splitlines()
-    with open('pcr/datasets/preprocessing/scannet/meta_data/scannetv2_val.txt') as val_file:
+    with open('scannet-preprocess/meta_data/scannetv2_val.txt') as val_file:
         val_scenes = val_file.read().splitlines()
 
     # Create output directories
