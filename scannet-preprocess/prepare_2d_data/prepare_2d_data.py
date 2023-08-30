@@ -16,7 +16,7 @@ import argparse
 import os, sys
 import numpy as np
 import skimage.transform as sktf
-import imageio
+import imageio.v2 as imageio
 from SensorData import SensorData
 import util
 # try:
@@ -57,7 +57,7 @@ def print_error(message):
 # from https://github.com/ScanNet/ScanNet/tree/master/BenchmarkScripts/2d_helpers/convert_scannet_label_image.py
 def map_label_image(image, label_mapping):
     mapped = np.copy(image)
-    for k, v in label_mapping.iteritems():
+    for k, v in label_mapping.items():
         mapped[image == k] = v
     return mapped.astype(np.uint8)
 
