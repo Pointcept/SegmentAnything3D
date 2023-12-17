@@ -1,5 +1,5 @@
 # Segment Anything 3D
-- Authors: Yunhan Yang, [Xiaoyang Wu](https://xywu.me/), [Tong He](https://tonghe90.github.io/), [Hengshuang Zhao](https://hszhao.github.io/), [Xihui Liu](https://xh-liu.github.io/)
+- Authors: [Yunhan Yang](https://yhyang-myron.github.io), [Xiaoyang Wu](https://xywu.me), [Tong He](https://tonghe90.github.io), [Hengshuang Zhao](https://hszhao.github.io), [Xihui Liu](https://xh-liu.github.io)
 - Institutes: Shanghai Artificial Intelligence Lab, The University of Hong Kong
 - Technical Report: [\[arxiv\]](https://arxiv.org/abs/2306.03908)
 
