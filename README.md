@@ -44,6 +44,17 @@ python scannet-preprocess/preprocess_scannet.py --dataset_root ${RAW_SCANNET_DIR
 python scannet-preprocess/prepare_2d_data/prepare_2d_data.py --scannet_path data/scannetv2 --output_path data/scannetv2_images --export_label_images
 ```
 
+### 3d Scanner App
+If you have an iPhone or iPad with a LiDAR senser, you can use [3d Scanner App](https://apps.apple.com/us/app/id1419913995) from App Store.
+This app generates necessary information including color images, depth images, poses and intrinsics. \
+Run preprocessing code for sampled data as follows:
+- `DATA_DIR`: the directory to be processed and it should contains frame_XXX.jpg(s), frame_XXX.json(s), depth_XXX.png(s), points.ply.
+- `PROCESSED_PATH`: the directory of processed data, which contains color, depth, pose, intrinsics directory and a points.pth file.
+```
+python preprocess_3d_scan.py --data_path ${DATA_DIR} --save_path ${PROCESSED_PATH}
+```
+
+
 ## Getting Started
 Please try it via [sam3d.py](./sam3d.py)
 ```
@@ -54,6 +65,16 @@ Please try it via [sam3d.py](./sam3d.py)
 # SAM_CHECKPOINT_PATH: the path of checkpoint for SAM
 
 python sam3d.py --rgb_path $RGB_PATH --data_path $DATA_PATH --save_path $SAVE_PATH --save_2dmask_path $SAVE_2DMASK_PATH --sam_checkpoint_path $SAM_CHECKPOINT_PATH 
+```
+
+### Custom data from 3D Scanner App
+Try it via [sam3d_custom.py](./sam3d_custom.py)
+- `PROCESSED_PATH`: the directory of processed data.
+- `SAVE_DIR`: Where to save the results. The results contain 2D segmentation images, result.pth, and result.ply.
+- `SAM_CHECKPOINT_PATH`: the path of checkpoint for SAM.
+
+```
+python sam3d_custom.py --data_path $PROCESSED_PATH --save_path $SAVE_DIR --sam_checkpoint_path $SAM_CHECKPOINT_PATH
 ```
 
 ## Pipeline
