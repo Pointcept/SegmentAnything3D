@@ -5,6 +5,7 @@ import os
 import copy
 from PIL import Image
 import json
+import cv2
 # import clip
 
 
@@ -103,6 +104,12 @@ class Voxelize(object):
             hashed_arr = np.bitwise_xor(hashed_arr, arr[:, j])
         return hashed_arr
 
+
+def save_depth_to_ordinary_image(src: str, dest: str):
+    im = cv2.imread(src, cv2.IMREAD_UNCHANGED)
+    im = im / np.linalg.norm(im)
+    cv2.imwrite(dest, im)
+    pass
 
 def overlap_percentage(mask1, mask2):
     intersection = np.logical_and(mask1, mask2)
