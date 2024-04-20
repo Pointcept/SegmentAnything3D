@@ -207,6 +207,8 @@ def get_matching_indices(pcd0, pcd1, search_voxel_size, K=None):
     for i in range(scene_coord.shape[0]):
         if dis[i] < search_voxel_size:
             match_inds.append([i,indices[i]])
+    
+    return match_inds
 
     
 
