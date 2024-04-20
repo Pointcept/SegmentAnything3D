@@ -183,7 +183,7 @@ def cal_2_scenes(pcd_list, index, voxel_size, voxelize, th=50):
     pcd1_new_group = cal_group(input_dict_0, input_dict_1, match_inds)
     # print(pcd1_new_group)
 
-    match_inds = get_matching_indices(pcd1, pcd0, 1.5 * voxel_size, 1)
+    match_inds = get_matching_indices(pcd0, pcd1, 1.5 * voxel_size, 1)
     input_dict_1["group"] = pcd1_new_group
     pcd0_new_group = cal_group(input_dict_1, input_dict_0, match_inds)
     # print(pcd0_new_group)
