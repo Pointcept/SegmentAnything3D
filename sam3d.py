@@ -179,13 +179,15 @@ def cal_2_scenes(pcd_list, index, voxel_size, voxelize, th=50):
         return input_dict_0
 
     # Cal Dul-overlap
-    pcd0_tree = o3d.geometry.KDTreeFlann(copy.deepcopy(pcd0))
-    match_inds = get_matching_indices(pcd1, pcd0_tree, 1.5 * voxel_size, 1)
+    # pcd0_tree = o3d.geometry.KDTreeFlann(copy.deepcopy(pcd0))
+    # match_inds = get_matching_indices(pcd1, pcd0_tree, 1.5 * voxel_size, 1)
+    match_inds = get_matching_indices(pcd1, pcd0, 1.5 * voxel_size, 1)
     pcd1_new_group = cal_group(input_dict_0, input_dict_1, match_inds)
     # print(pcd1_new_group)
 
-    pcd1_tree = o3d.geometry.KDTreeFlann(copy.deepcopy(pcd1))
-    match_inds = get_matching_indices(pcd0, pcd1_tree, 1.5 * voxel_size, 1)
+    # pcd1_tree = o3d.geometry.KDTreeFlann(copy.deepcopy(pcd1))
+    # match_inds = get_matching_indices(pcd0, pcd1_tree, 1.5 * voxel_size, 1)
+    match_inds = get_matching_indices(pcd1, pcd0, 1.5 * voxel_size, 1)
     input_dict_1["group"] = pcd1_new_group
     pcd0_new_group = cal_group(input_dict_1, input_dict_0, match_inds)
     # print(pcd0_new_group)
