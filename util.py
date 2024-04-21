@@ -7,6 +7,7 @@ from PIL import Image
 import json
 import cv2
 # import clip
+import pointops
 
 
 SCANNET_COLOR_MAP_20 = {-1: (0., 0., 0.), 0: (174., 199., 232.), 1: (152., 223., 138.), 2: (31., 119., 180.), 3: (255., 187., 120.), 4: (188., 189., 34.), 5: (140., 86., 75.),
@@ -199,16 +200,24 @@ def num_to_natural(group_ids):
     return array
 
 
-def get_matching_indices(source, pcd_tree, search_voxel_size, K=None):
+def get_matching_indices(pcd0, pcd1, search_voxel_size, K=None):
     match_inds = []
-    for i, point in enumerate(source.points):
-        [_, idx, _] = pcd_tree.search_radius_vector_3d(point, search_voxel_size)
-        if K is not None:
-            idx = idx[:K]
-        for j in idx:
-            # match_inds[i, j] = 1
-            match_inds.append((i, j))
+    scene_coord = torch.tensor(np.asarray(pcd0.points)).cuda().contiguous().float()
+    new_offset = torch.tensor(scene_coord.shape[0]).cuda().float()
+    gen_coord = torch.tensor(np.asarray(pcd1.points)).cuda().contiguous().float()
+    offset = torch.tensor(gen_coord.shape[0]).cuda().float()
+
+    indices, dis = pointops.knn_query(1, gen_coord, offset, scene_coord, new_offset)
+    indices = indices.cpu().numpy()[:,0]
+    dis = dis.cpu().numpy()[:,0]
+
+    for i in range(scene_coord.shape[0]):
+        if dis[i] < search_voxel_size:
+            match_inds.append([i,indices[i]])
+    
     return match_inds
+
+    
 
 
 def visualize_3d(data_dict, text_feat_path, save_path):
